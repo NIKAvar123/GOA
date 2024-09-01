@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            border: 50px solid blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box1 {
+            background-color: tomato;
+
+        }
+        .box2 {
+            background-color: black;
+            color: azure;
+
+        }
+        .box3 {
+            background-color: rebeccapurple;
+            color: azure;
+            width: 500px;
+            height: 500px;
+        }
+        .container2 {
+            border: 30px solid skyblue;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .box--2 {
+            width: 500px;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex:1 1 500px;
+        }
+        .box3 {
+            background-color: aquamarine;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box1 box">1</div>
+        <div class="box2 box">2</div>
+        <div class="box3 box">3</div>
+    </div>
+    <center>
+        contaainer2
+    </center>
+    <div>
+        <div class="container">
+            <div class="box1 box--2">1</div>
+            <div class="box2 box--2">2</div>
+            <div class="box3 box--2">3</div>
+    </div>
+</body>
+</html>
