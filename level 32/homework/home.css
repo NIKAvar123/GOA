@@ -1,0 +1,21 @@
+button {
+    border: none;
+    padding: 10px 20px;
+    background-color: blue;
+    color: aliceblue;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px color(a98-rgb  green blue);
+    border-radius: 5px;
+}
+
+span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    
+    position: relative;
+    left: 24px;
+    bottom: 15px;
+}
