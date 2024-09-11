@@ -1,0 +1,17 @@
+.loadingBar{
+    width: 300px;
+    height: 30px;
+    border: 2px solid black;
+}
+
+.innerBar{
+    background-color: blue;
+    height: 30px;
+    width: 0px;
+    transition: width 10s;
+    transition-delay: 3s;
+}
+
+.loadingBar:hover .innerBar{
+    width: 300px;
+}
