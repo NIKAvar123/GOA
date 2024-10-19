@@ -1,0 +1,1 @@
+console.log("nika".repeat(10))
