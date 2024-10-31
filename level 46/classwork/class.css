@@ -1,0 +1,27 @@
+
+
+
+  body{
+    background: #0B2429;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div {
+    width: 90px;
+    height: 85px;
+    background: #998235;
+    position:absolute;
+  }
+  [a]{
+    top: 0;
+  }
+  [b]{
+    bottom: 0;
+  }
+  [c]{
+    width: 130px;
+    height: 90px;
+    background: #F3AC3C;
+    border-radius: 50px;
+  }

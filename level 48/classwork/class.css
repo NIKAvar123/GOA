@@ -1,0 +1,13 @@
+.grandparent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.parent {
+     display: grid; 
+}
+
+.child {
+    background-color: lightblue;
+    padding: 20px;
+}

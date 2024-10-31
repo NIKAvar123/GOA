@@ -1,18 +1,23 @@
 
   
 
+
 //1
 function myfunc(num){
-    return num==60;
+    return num*60;
+    
 }
 
 console.log(myfunc(60))
 
+
+
+
 //2
-function myfunc(num){
-    num=3 + 4 * 5;
+function myfunc(num1 ,num2,num3){
+    return (num1+num2)*num3
 }
-console.log(myfunc(num))
+console.log(myfunc(1,2,3))
 
 //3?
 function myfunc(num){
@@ -25,14 +30,12 @@ function myfunc(num){
 }
 
 //4
-function myfunc(name){
-    return "HELLO"+name
+function logElement(id){
+    let element =document.getElementByid(id)
+    console.log("element:"=element.textContent);
 
 }
-
-
-console.log(myfunc(nika))
-
+logElement("myElement");
 
 //5?
 
