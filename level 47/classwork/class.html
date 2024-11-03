@@ -1,56 +1,17 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #result {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="./class.css">
 </head>
 <body>
-    <script>
-        const userName = prompt("please enter your name:");
-        document.write(`<h2>hello, ${userName}!</h2>`);
-
-        let result = 0;
-
-        function updateResult() {
-            document.getElementById('result').innerText = result;
-        }
-
-        function add() {
-            const inputValue = parseFloat(document.getElementById('numberInput').value);
-            result += inputValue;
-            updateResult();
-        }
-
-        function subtract() {
-            const inputValue = parseFloat(document.getElementById('numberInput').value);
-            result -= inputValue;
-            updateResult();
-        }
-
-        function multiply() {
-            const inputValue = parseFloat(document.getElementById('numberInput').value);
-            result *= inputValue;
-            updateResult();
-        }
-    </script>
-
-    <input type="number" id="numberInput" placeholder="შეიყვანეთ რიცხვი">
-    <button onclick="add()">დამატება</button>
-    <button onclick="subtract()">გამოკლება</button>
-    <button onclick="multiply()">გამრავლება</button>
-
-    <div id="result">0</div>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child">Child</div>
+        </div>
+    </div>
 </body>
 </html>
+
