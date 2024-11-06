@@ -1,33 +1,30 @@
+// script.js
 
-const outputText = document.getElementById("outputText");
-const inputText = document.getElementById("inputText");
-const inputColor = document.getElementById("inputColor");
-const inputSize = document.getElementById("inputSize");
-const btnText = document.getElementById("btnText");
-const btnColor = document.getElementById("btnColor");
-const btnSize = document.getElementById("btnSize");
-const btnToggleMode = document.getElementById("btnToggleMode");
-
-let isDarkMode = false;
-
-
-btnText.addEventListener("click", () => {
-    outputText.textContent = inputText.value || "შეიყვანე ტექსტი";
+document.getElementById('textButton').addEventListener('click', function() {
+    const text = document.getElementById('inputText').value;
+    document.getElementById('output').textContent = text;
 });
 
-
-btnColor.addEventListener("input", () => {
-    outputText.style.color = inputColor.value;
+document.getElementById('colorButton').addEventListener('click', function() {
+    const color = document.getElementById('colorPicker').value;
+    document.getElementById('output').style.color = color;
 });
 
-
-btnSize.addEventListener("input", () => {
-    outputText.style.fontSize = `${inputSize.value}px`;
+document.getElementById('sizeButton').addEventListener('click', function() {
+    const size = document.getElementById('fontSize').value;
+    document.getElementById('output').style.fontSize = size + 'px';
 });
 
-
-btnToggleMode.addEventListener("click", () => {
-    isDarkMode = !isDarkMode;
-    document.body.classList.toggle("dark-mode", isDarkMode);
-    document.body.classList.toggle("light-mode", !isDarkMode);
+document.getElementById('themeSwitcher').addEventListener('change', function() {
+    if (this.checked) {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+    } else {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+    }
 });
+
+// Default to light mode
+document.body.classList.add('light-mode');
+

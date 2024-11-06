@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ვებსაიტი</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ვებ საიტი</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app">
-        <h2>style and color</h2>
-        <input id="inputText" type="text" placeholder="enter text">
-        <input id="inputColor" type="color">
-        <input id="inputSize" type="number" placeholder="ზომა px" min="1">
-        <button id="btnText">add text</button>
-        <button id="btnColor">color change</button>
-        <button id="btnSize">size change</button>
-        <button id="btnToggleMode">dark</button>
-        <p id="outputText">your text</p>
+    <div class="container">
+        <h1></h1>
+        
+
+        <input type="text" id="inputText" placeholder="enter text">
+        <input type="color" id="colorPicker">
+        <input type="number" id="fontSize" placeholder="size px" min="10" max="100">
+ p
+        <button id="textButton">text</button>
+        <button id="colorButton">color</button>
+        <button id="sizeButton">size</button>
+
+        <div id="output" class="output">
+            your text
+        </div>
+
+    
+        <label for="themeSwitcher">Dark Mode</label>
+        <input type="checkbox" id="themeSwitcher">
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
