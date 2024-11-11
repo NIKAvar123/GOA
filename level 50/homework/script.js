@@ -1,4 +1,4 @@
-// script.js
+
 
 document.getElementById('textButton').addEventListener('click', function() {
     const text = document.getElementById('inputText').value;
@@ -25,6 +25,13 @@ document.getElementById('themeSwitcher').addEventListener('change', function() {
     }
 });
 
-// Default to light mode
-document.body.classList.add('light-mode');
-
+toggleMode.addEventListener('click', () => {
+    if (document.body.classList.contains('dark-mode')) {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+    } 
+    else {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+    }
+});
