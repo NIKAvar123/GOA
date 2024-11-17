@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <input id="text" type="text">
+    <button onclick="func()" id="btn">Add element</button>
+    <div id="parent">
+        <div></div>
+    </div>
+
+    <script>
+        function func() {
+            // 1 safexuri - (sheqmna elemntis)
+            let elem = document.createElement("div")
+            // 2 safexuri - (atributebis sheqmna)
+            elem.style.border = "solid 1px black"
+            elem.textContent = document.getElementById("text").value
+            // 3 safexuri 
+            document.getElementById("parent").appendChild(elem)
+        }
+    </script>
+
+</body>
+
+</html>
