@@ -1,0 +1,42 @@
+<p></p>
+<p><a></a></p>
+<p><a></a></p>
+<style>
+* {
+  margin: 0;
+}
+body {
+  background: #d96c7b;
+}
+p {
+  --w: 7.5vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--w);
+  height: var(--w);
+  background: #d96c7b;
+  border: 7.5vw solid #ffffff;
+}
+p + p {
+  --w: 10vw;
+  transform: rotate(0deg) translate(-115%, -115%);
+  background: #ffffff;
+  border-radius: 50% 50% 0;
+}
+a {
+  --w: 10vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--w);
+  height: var(--w);
+  background: #d96c7b;
+  border-radius: 50%;
+}
+p + p + p {
+  transform: rotate(180deg) translate(-15%, -15%);
+}
+</style>
