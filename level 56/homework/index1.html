@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+        .form-container {
+            margin: 50px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .input-field {
+            margin: 10px 0;
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .radio-container {
+            margin: 20px auto;
+            text-align: left;
+            width: 80%;
+        }
+        .info-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <input type="email" id="email" class="input-field" placeholder="Enter your email">
+        <input type="password" id="password" class="input-field" placeholder="Enter your password">
+        <label>
+            <input type="checkbox" id="checkbox"> Accept Terms
+        </label>
+        <button class="submit-btn" onclick="validateForm()">Submit</button>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <h2>Choose a Programmer</h2>
+        <div class="radio-container">
+            <label><input type="radio" name="programmer" value="Ada"> Ada Lovelace</label><br>
+            <label><input type="radio" name="programmer" value="Alan"> Alan Turing</label><br>
+            <label><input type="radio" name="programmer" value="Grace"> Grace Hopper</label><br>
+        </div>
+        <div id="info-container" class="info-box"></div>
+    </div>
+
+    <script>
+        function validatePassword(password) {
+            const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+            return regex.test(password);
+        }
+
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const checkbox = document.getElementById('checkbox').checked;
+
+            if (!email) {
+                alert("Email is required");
+                return;
+            }
+
+            if (!validatePassword(password)) {
+                alert("Password must be at least 8 characters long, include uppercase, lowercase, and a number.");
+                return;
+            }
+
+            if (!checkbox) {
+                alert("You must accept the terms.");
+                return;
+            }
+
+            const darkMode = confirm("Do you want to enable dark mode?");
+            if (darkMode) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }
+
+            document.querySelector('.form-container').style.display = "none";
+            document.getElementById('main-content').style.display = "block";
+        }
+
+        document.querySelectorAll('input[name="programmer"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const infoContainer = document.getElementById('info-container');
+                switch (this.value) {
+                    case 'Ada':
+                        infoContainer.innerHTML = "<strong>Ada Lovelace</strong><br>The first computer programmer.It can create very cool websites.";
+                        break;
+                    case 'Alan':
+                        infoContainer.innerHTML = "<strong>Alan Turing</strong><br>Pioneer of artificial intelligence.It is a famous app maker.";
+                        break;
+                    case 'Grace':
+                        infoContainer.innerHTML = "<strong>Grace Hopper</strong><br>Inventor of the first compiler.He knows everything from the programmers listed above.";
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

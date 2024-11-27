@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <style>
+            #table {
+  background-color: #525252;
+  padding: 20px;
+  color: white;
+}
+
+#dataTable {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  color: white;
+}
+
+th, td {
+  border: 1px solid #DDDDDD;
+  padding: 8px;
+}
+
+th {
+  background-color: #494949;
+  padding-top: 12px; 
+  padding-bottom: 12px; 
+  text-align: left;
+}
+
+h2{
+  text-align: center;
+}
+        </style>
+    </head>
+<body>
+    <h2>Registration Form</h2>
+
+    <form id="myForm">
+      <label for="name">Enter email:</label>
+      <input type="text" id="email" name="email"></br></br>
+
+      <label for="age">Enter password:</label>
+      <input type="password" id="pass" name="pass"></br></br>
+
+      <input type="checkbox" id="subscribe" name="subscribe">
+      <label for="subscribe">Subscribe to our newsletter</label><br><br>
+
+      <input type="submit">
+    </form>
+
+    <div id="table">
+    <h2>Database Simulation</h2>
+      <table id="dataTable">
+        <tr>
+          <th>email</th>
+          <th>password</th>
+          <th>isSubscribed</th>
+        </tr>
+      </table>
+    </div>
+    <script>
+        function processFormData() {
+
+let email = document.getElementById('email').value;
+let password = document.getElementById('pass').value;
+let isSubscribed = document.getElementById('subscribe').checked;
+
+//Insert data into table with predefined function
+insertdata(email, password, isSubscribed);
+
+// Clear the form fields
+document.getElementById('email').value = '';
+document.getElementById('pass').value = '';
+
+};
+    </script>
+</body>
+</html>
