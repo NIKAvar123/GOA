@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p element change</title>
+</head>
+<body>
+
+    <p id="myParagraph">first text</p>
+
+    <button onclick="changeTextAndColor()">change text and color</button>
+
+    <script>
+        function changeTextAndColor() {
+
+            var paragraph = document.getElementById('myParagraph');
+            
+            paragraph.innerHTML = 'text changed';
+            
+            paragraph.style.color = 'red';
+        }
+    </script>
+
+</body>
+</html>

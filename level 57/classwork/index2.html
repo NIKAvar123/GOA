@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სამსახურის განაცხადი</title>
+    <script>
+        function checkEligibility() {
+            const age = parseInt(document.getElementById("age").value);
+            const experience = parseInt(document.getElementById("experience").value);
+            const result = document.getElementById("result");
+
+            if (age > 25 && experience >= 5) {
+                result.textContent = "გილოცავთ! თქვენ მიღებული ხართ სამსახურში.";
+                result.style.color = "green";
+            } else {
+                result.textContent = "ბოდიშით, თქვენ არ ხართ მიღებული სამსახურში.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>სამუშაო განაცხადი</h1>
+    <label for="age">ასაკი</label>
+    <input type="number" id="age" required>
+    <br><br>
+    <label for="experience">სამუშაო გამოცდილება (წლებში):</label>
+    <input type="number" id="experience" required>
+    <br><br>
+    <button onclick="checkEligibility()">შედეგის ნახვა</button>
+    <p id="result"></p>
+</body>
+</html>
