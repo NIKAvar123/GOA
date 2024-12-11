@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტექსტის შეცვლა</title>
+
+</head>
+<body>
+    <p class="text">p 1</p>
+    <p class="text">p 2</p>
+    <p class="text">p 3</p>
+    <button onclick="toggleText()">change text</button>
+
+    <script>
+        let Hello = true;
+
+        function toggleText() {
+            const paragraphs = document.getElementsByClassName("text");
+            for (let i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].textContent = Hello ? "hello" : "bye";
+            }
+            Hello = !Hello;
+        }
+    </script>
+</body>
+</html>
