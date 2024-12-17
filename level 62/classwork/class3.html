@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Text</title>
+  <style>
+    #text {
+      font-size: 24px;
+      transition: opacity 0.5s, color 0.5s;
+    }
+
+    .hidden {
+      opacity: 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Toggle</h1>
+  <div id="text">გამარჯობა</div>
+  <button onclick="toggleText()">Toggle</button>
+
+  <script>
+    let isHidden = false;
+    const textDiv = document.getElementById('text');
+
+    function toggleText() {
+      if (!isHidden) {
+        textDiv.classList.add('hidden');
+        setTimeout(() => {
+          textDiv.textContent = "ნახვამდის";
+          textDiv.classList.remove('hidden');
+        }, 500);
+      } else {
+        textDiv.classList.add('hidden');
+        setTimeout(() => {
+          textDiv.textContent = "გამარჯობა";
+          textDiv.classList.remove('hidden');
+        }, 500);
+      }
+      isHidden = !isHidden;
+    }
+  </script>
+</body>
+</html>

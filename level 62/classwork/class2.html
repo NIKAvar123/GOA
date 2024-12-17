@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #counter {
+      font-size: 48px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Styled Counter</h1>
+  <div id="counter" class="green">0</div>
+  <button onclick="increment()">+</button>
+  <button onclick="decrement()">-</button>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+
+    function updateColor() {
+      if (count > 0) {
+        counter.className = 'green';
+      } else if (count < 0) {
+        counter.className = 'red';
+      } else {
+        counter.className = '';
+      }
+    }
+
+    function increment() {
+      count++;
+      counter.textContent = count;
+      updateColor();
+    }
+
+    function decrement() {
+      count--;
+      counter.textContent = count;
+      updateColor();
+    }
+
+    function reset() {
+      count = 0;
+      counter.textContent = count;
+      updateColor();
+    }
+  </script>
+</body>
+</html>

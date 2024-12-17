@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #counter {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 20px;
+    }
+
+    input {
+      width: 60px;
+      padding: 5px;
+      font-size: 18px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Styled Counter</h1>
+  <div>
+    <label>დამატება/გამოკლების რიცხვი:</label>
+    <input type="number" id="step" value="1">
+  </div>
+  <div id="counter">0</div>
+  <button onclick="increment()">დამატება</button>
+  <button onclick="decrement()">გამოკლება</button>
+  <button onclick="reset()">რესტარტი</button>
+
+  <script>
+    let count = 0;
+
+    const counterElement = document.getElementById("counter");
+    const stepElement = document.getElementById("step");
+
+    function updateCounter() {
+      counterElement.textContent = count;
+    }
+
+    function increment() {
+      const step = parseInt(stepElement.value) || 1;
+      count += step;
+      updateCounter();
+    }
+
+    function decrement() {
+      const step = parseInt(stepElement.value) || 1;
+      count -= step;
+      updateCounter();
+    }
+
+    function reset() {
+      count = 0;
+      updateCounter();
+    }
+  </script>
+</body>
+</html>

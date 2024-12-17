@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        #counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin: 20px;
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #e9f7fe;
+            transition: color 0.3s;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        const counterElement = document.getElementById('counter');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const resetButton = document.getElementById('reset');
+
+        let counter = 0;
+
+        const updateCounterDisplay = () => {
+            counterElement.textContent = counter;
+            if (counter === 0) {
+                counterElement.style.color = 'red';
+            } else {
+                counterElement.style.color = '#333';
+            }
+        };
+
+        incrementButton.addEventListener('click', () => {
+            if (counter < 100) {
+                counter++;
+                updateCounterDisplay();
+            } else {
+                alert('The counter cannot exceed 100!');
+            }
+        });
+
+        decrementButton.addEventListener('click', () => {
+            if (counter > -100) {
+                counter--;
+                updateCounterDisplay();
+            } else {
+                alert('The counter cannot go below -100!');
+            }
+        });
+
+        resetButton.addEventListener('click', () => {
+            if (counter === 0) {
+                counterElement.style.color = 'red';
+                alert('The counter is already at 0. Resetting is not allowed!');
+            } else {
+                counter = 0;
+                updateCounterDisplay();
+            }
+        });
+    </script>
+</body>
+</html>
+

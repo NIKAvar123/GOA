@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie Clicker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #cookie {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    #cookie:active {
+      transform: scale(0.9);
+    }
+
+    #score {
+      font-size: 32px;
+      margin-top: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cookie Clicker</h1>
+  <img id="cookie" src="./image.png" alt="Cookie">
+  <div id="score">ქულა: 0</div>
+
+  <script>
+    let score = 0;
+    let pointsPerClick = 1;
+    const scoreDisplay = document.getElementById("score");
+    const cookie = document.getElementById("cookie");
+
+    cookie.addEventListener("click", () => {
+      score += pointsPerClick;
+      scoreDisplay.textContent = `ქულა: ${score}`;
+
+      // ყოველ 100 ქულაზე გაორმაგდება კლიკზე გამომუშავებული ქულა
+      if (score % 100 === 0) {
+        pointsPerClick *= 2;
+        alert(`გილოცავ! კლიკზე ქულა გაორმაგდა: ახლა თითო კლიკზე ${pointsPerClick} ქულა გემატება.`);
+      }
+    });
+  </script>
+</body>
+</html>

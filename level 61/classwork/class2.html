@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Text Button</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            color: #444;
+        }
+        #text {
+            display: block;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #222;
+            background-color: #e8eaf6;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transition:  0,3s ease-in-out;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 8px rgba(0, 86, 179, 0.6);
+        }
+        #greeting {
+            font-size: 18px;
+            color: #007BFF;
+            margin-top: 10px;
+            opacity: 1;
+            transition:  0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Hide Text</button>
+    <div id="text">Hello! I'm Nika</div>
+    <div id="greeting">Hello!</div>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const text = document.getElementById('text');
+        const greeting = document.getElementById('greeting');
+
+        button.addEventListener('click', () => {
+            if (text.style.opacity==="0") {
+                text.style.display = 'block';
+                text.style.opacity = '1'; 
+                button.textContent = 'Hide Text';
+                greeting.textContent = 'Hello!'; 
+                greeting.style.opacity = '1'; 
+            } else {
+                text.style.opacity = '0';
+                greeting.style.opacity = '0'; 
+                text.style.opacity="0"                    
+                greeting.textContent = 'Good Bye!'; 
+                button.textContent = 'Show Text';
+            }
+        });
+    </script>
+</body>
+</html>
