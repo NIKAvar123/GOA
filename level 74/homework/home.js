@@ -6,9 +6,9 @@ function Car(brand, model, year) {
 }
 
 
-const car1 = new Car("Toyota", "Corolla", 2020);
-const car2 = new Car("BMW", "X5", 2019);
-const car3 = new Car("Mercedes", "C-Class", 2021);
+const car1 = new Car("Toyota", "ptius", 2020);
+const car2 = new Car("BMW", "m4", 2019);
+const car3 = new Car("Mercedes", "cls", 2021);
 
 
 function Animal(type, name, age) {
@@ -17,9 +17,9 @@ function Animal(type, name, age) {
     this.age = age;
 }
 
-const animal1 = new Animal("Dog", "Rex", 5);
-const animal2 = new Animal("Cat", "Mimi", 3);
-const animal3 = new Animal("Parrot", "Coco", 2);
+const animal1 = new Animal("Dog", "bobi", 5);
+const animal2 = new Animal("Cat", "rexi", 3);
+const animal3 = new Animal("Parrot", "jumbera", 2);
 
 
 function Student(name, age, grade) {
