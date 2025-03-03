@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSBattle Solution</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #5AED9C;
+        }
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .l-shape {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #4B4D88;
+        }
+        .l-shape::before, .l-shape::after {
+            content: "";
+            position: absolute;
+            background: #4B4D88;
+        }
+        .l-shape::before {
+            width: 40px;
+            height: 20px;
+            top: 40px;
+        }
+        .l-shape::after {
+            width: 20px;
+            height: 40px;
+            left: 40px;
+        }
+        .l1 { top: 40px; left: 40px; }
+        .l2 { top: 90px; left: 90px; }
+        .l3 { top: 140px; left: 140px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="l1"></div>
+        <div class="l2"></div>
+        <div class="l3"></div>
+    </div>
+</body>
+</html>
