@@ -7,5 +7,5 @@ def even_numbers(arr,n):
             if count < n: 
                 new_arr.append(i)
                 count += 1 
-    return new_arr[::-1]
+    return new_arr[-1]
                 
