@@ -1,0 +1,18 @@
+
+<div id="a">ტექსტი</div>
+<div id="b"></div>
+
+<input id="which" type="text" placeholder="რომელი div? (a ან b)">
+<button onclick="checkDiv()">შეამოწმე</button>
+
+<script>
+  function checkDiv() {
+    let name = document.getElementById("which").value;
+    let d = document.getElementById(name);
+
+    if (d.innerHTML.trim() != "") {
+      alert("შიგნით რაღაცაა");
+    } else {
+      alert("ცარიელია");
+    }
+  }

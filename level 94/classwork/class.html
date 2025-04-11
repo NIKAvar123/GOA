@@ -1,0 +1,27 @@
+<div id="test1">
+    <p>გამარჯობა</p>
+    <span>როგორ ხარ?</span>
+  </div>
+  
+  <div id="test2">
+  </div>
+  
+  <script>
+    function printChildText(element) {
+      if (element.children.length > 0) {
+        for (let i = 0; i < element.children.length; i++) {
+          console.log(element.children[i].innerText);
+        }
+      } else {
+        console.log("There is no text!");
+      }
+    }
+  
+    // გამოსაყენებლად:
+    let el1 = document.getElementById("test1");
+    let el2 = document.getElementById("test2");
+  
+    printChildText(el1); // დააბეჭდავს შვილების ტექსტებს
+    printChildText(el2); // დაწერს: There is no text!
+  </script>
+  
