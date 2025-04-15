@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animate Div</title>
+  <style>
+    #myDiv {
+      width: 200px;
+      height: 200px;
+      background-color: teal;
+      transition: opacity 1s ease;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    #myDiv.hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="myDiv"></div>
+
+  <script>
+    const div = document.getElementById('myDiv');
+    let animating = false;  //vnaxot mimdinareobs tu ara animacia
+
+    div.addEventListener('click', () => {
+      if (animating) return; //tu animacia mimdinareobs araferi gavaketot
+
+      animating = true;
+      div.style.pointerEvents = 'none'; //ivents vashorebt
+
+      // vaqrob 1 wamshi
+      div.classList.add('hidden');
+
+      setTimeout(() => {
+        // shecherdeba gaqroba 1 wamit
+        setTimeout(() => {
+          // gamochndeba 1 wamshi
+          div.classList.remove('hidden');
+
+          setTimeout(() => {
+            // ukve davasrulet anumacia da iventi unda davabrunot
+            div.style.pointerEvents = 'auto';
+            animating = false;
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>

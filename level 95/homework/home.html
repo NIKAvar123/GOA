@@ -1,0 +1,32 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function typeText(text, elementId, speed = 100) {
+          const element = document.getElementById(elementId);
+          element.innerHTML = "";
+          let i = 0;
+      
+          function type() {
+            if (i <= text.length) {
+              element.innerHTML = text.slice(0, i);
+              i++;
+              setTimeout(type, speed);
+            }
+          }
+      
+          type();
+        }
+      
+
+        const userInput = "Hello World!";
+        typeText(userInput, "typewriter", 150); 
+      </script>
+  </body>
+  </html>
