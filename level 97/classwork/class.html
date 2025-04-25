@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Input ასოების რაოდენობა</title>
+</head>
+<body>
+  <h3>ჩაწერე ტექსტი:</h3>
+  <input type="text" id="textInput" placeholder="დაწერე რაღაც..." />
+
+  <script>
+    const input = document.getElementById('textInput');
+    let previousLength = 0;
+
+    input.addEventListener('input', () => {
+      const currentLength = input.value.length;
+
+      if (currentLength > previousLength) {
+        console.log(`დაემატა ${currentLength - previousLength} ასო(ი)`);
+      } else if (currentLength < previousLength) {
+        console.log(`წაიშალა ${previousLength - currentLength} ასო(ი)`);
+      }
+
+      previousLength = currentLength;
+    });
+  </script>
+</body>
+</html>
