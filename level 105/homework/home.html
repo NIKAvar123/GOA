@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div onclick="alert('Div clicked')">
+  <button onclick="alert('Button clicked')">Click Me</button>
+</div>
+
+<ul onclick="alert('UL clicked')">
+  <li onclick="alert('LI clicked')">List Item</li>
+</ul>
+
+<input type="text" id="myInput" placeholder="შეიყვანე ტექსტი">
+<p id="output"></p>
+
+
+<button id="myBtn">დააწკაპუნე</button>
+
+<script>
+
+  // ვიღებთ ღილაკს ID-ით
+  const button = document.getElementById("myBtn");
+
+  // ვამატებთ click ივენთს
+  button.addEventListener("click", () => {
+    alert("ღილაკზე დაჭერილია!");
+  });
+    const input = document.getElementById("myInput");
+  const output = document.getElementById("output");
+
+  // ვუსმენთ input ივენთს
+  input.addEventListener("input", () => {
+    output.textContent = "შეყვანილია: " + input.value;
+  });
+    const form = document.getElementById("myForm");
+
+
+</script>
+
+
+</body>
+</html>
