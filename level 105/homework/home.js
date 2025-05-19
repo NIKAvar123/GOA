@@ -45,7 +45,7 @@ testLet();
 
 function testConst() {
   const x = 10;
-  // x = 20; ❌ შეცდომა – const არ შეიძლება შეიცვალოს
+//const არ შეიძლება შეიცვალოს
   console.log(x); // 10
 }
 
