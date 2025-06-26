@@ -11,7 +11,7 @@ function isPangram(string){
     return true;
 }
 
-
+//________________________________________________                                                      
 
 function mergeArrays(a, b) {
   const out = Array.from(new Set(a.concat(b)))

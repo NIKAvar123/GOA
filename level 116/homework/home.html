@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Classes Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .output {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .label {
+      font-weight: bold;
+    }
+    input, button {
+      padding: 5px 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .price-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Temperature -->
+  <div class="card" id="temperatureCard">
+    <div class="title">🌡️ Temperature</div>
+    <div class="output" id="celsiusOut"></div>
+    <div class="output" id="fahrenheitOut"></div>
+  </div>
+
+  <!-- Rectangle -->
+  <div class="card" id="rectangleCard">
+    <div class="title">📐 Rectangle</div>
+    <div class="output" id="rectWidth"></div>
+    <div class="output" id="rectHeight"></div>
+    <div class="output" id="rectArea"></div>
+  </div>
+
+  <!-- User -->
+  <div class="card" id="userCard">
+    <div class="title">🙋‍♂️ User</div>
+    <div class="output" id="fullNameDisplay" style="font-style: italic; font-size: 1.3em; color: #333;"></div>
+  </div>
+
+  <!-- Bank Account -->
+  <div class="card" id="bankCard">
+    <div class="title">🏦 Bank Account</div>
+    <div class="output"><span class="label">Balance:</span> <span id="bankBalance"></span></div>
+    <input type="number" id="balanceInput" placeholder="Enter new balance" />
+    <button onclick="updateBalance()">Update</button>
+  </div>
+
+  <!-- Product -->
+  <div class="card" id="productCard">
+    <div class="title">🛒 Product</div>
+    <div class="price-group">
+      <div><span class="label">Original Price:</span> <span id="origPrice"></span></div>
+      <div><span class="label">Final Price:</span> <span id="finalPrice"></span></div>
+    </div>
+  </div>
+
+  <script>
+    // Temperature Class
+    class Temperature {
+      constructor(celsius) {
+        this._celsius = celsius;
+      }
+
+      get celsius() {
+        return this._celsius;
+      }
+
+      set celsius(value) {
+        this._celsius = value;
+      }
+
+      get fahrenheit() {
+        return this._celsius * 9 / 5 + 32;
+      }
+
+      set fahrenheit(value) {
+        this._celsius = (value - 32) * 5 / 9;
+      }
+    }
+
+    const temp = new Temperature(25);
+    document.getElementById('celsiusOut').textContent = `Celsius: ${temp.celsius}°C`;
+    document.getElementById('fahrenheitOut').textContent = `Fahrenheit: ${temp.fahrenheit.toFixed(1)}°F`;
+
+    // Rectangle Class
+    class Rectangle {
+      set width(w) {
+        this._width = w;
+      }
+      set height(h) {
+        this._height = h;
+      }
+      get area() {
+        return this._width * this._height;
+      }
+    }
+
+    const rect = new Rectangle();
+    rect.width = 10;
+    rect.height = 5;
+    document.getElementById('rectWidth').textContent = `Width: ${rect._width}`;
+    document.getElementById('rectHeight').textContent = `Height: ${rect._height}`;
+    document.getElementById('rectArea').textContent = `Area: ${rect.area}`;
+
+    // User Class
+    class User {
+      set firstName(name) {
+        this._firstName = name;
+      }
+      set lastName(name) {
+        this._lastName = name;
+      }
+      get fullName() {
+        return `${this._firstName} ${this._lastName}`;
+      }
+    }
+
+    const user = new User();
+    user.firstName = "Nika";
+    user.lastName = "Mumladze";
+    document.getElementById('fullNameDisplay').textContent = `👤 ${user.fullName}`;
+
+    // BankAccount Class
+    class BankAccount {
+      #balance = 0;
+
+      constructor(balance) {
+        this.balance = balance;
+      }
+
+      get balance() {
+        return this.#balance;
+      }
+
+      set balance(value) {
+        if (value >= 0) {
+          this.#balance = value;
+        }
+      }
+    }
+
+    const bank = new BankAccount(1500);
+    function updateBalance() {
+      const val = parseFloat(document.getElementById("balanceInput").value);
+      if (!isNaN(val)) {
+        bank.balance = val;
+        document.getElementById('bankBalance').textContent = `$${bank.balance.toFixed(2)}`;
+      }
+    }
+    document.getElementById('bankBalance').textContent = `$${bank.balance.toFixed(2)}`;
+
+    // Product Class
+    class Product {
+      constructor(price, discount) {
+        this.price = price;
+        this.discount = discount;
+      }
+
+      set price(value) {
+        this._price = value;
+      }
+
+      set discount(value) {
+        this._discount = value;
+      }
+
+      get finalPrice() {
+        return this._price * (1 - this._discount / 100);
+      }
+    }
+
+    const product = new Product(100, 20);
+    document.getElementById('origPrice').textContent = `$${product._price}`;
+    document.getElementById('finalPrice').textContent = `$${product.finalPrice.toFixed(2)}`;
+  </script>
+</body>
+</html>

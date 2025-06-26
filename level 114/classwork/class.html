@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+    body {
+      margin: 0;
+      background-color: #6592CF; /* Periwinkle background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .spiral {
+      position: relative;
+      width: 320px;
+      height: 320px;
+    }
+
+    .bar {
+      position: absolute;
+      background-color: #F7CB71; /* Golden yellow */
+    }
+
+    /* Spiral layers */
+    .bar1 { top: 0; left: 0; width: 280px; height: 40px; }
+    .bar2 { top: 0; right: 0; width: 40px; height: 280px; }
+    .bar3 { bottom: 0; right: 40px; width: 240px; height: 40px; }
+    .bar4 { bottom: 40px; left: 40px; width: 40px; height: 200px; }
+    .bar5 { top: 80px; left: 80px; width: 160px; height: 40px; }
+    .bar6 { top: 80px; right: 80px; width: 40px; height: 120px; }
+    .bar7 { bottom: 80px; right: 120px; width: 120px; height: 40px; }
+    .bar8 { bottom: 120px; left: 110px; width: 40px; height: 80px; }
+    .bar9 { top: 160px; left: 160px; width: 80px; height: 40px; }
+    .bar10 { top: 160px; left: 200px; width: 40px; height: 40px; }
+  </style>
+</head>
+<body>
+  <div class="spiral">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+    <div class="bar bar4"></div>
+    <div class="bar bar5"></div>
+    <div class="bar bar6"></div>
+    <div class="bar bar7"></div>
+    <div class="bar bar8"></div>
+    <div class="bar bar9"></div>
+    <div class="bar bar10"></div>
+  </div>
+</body>
+</html>
+
+
+
