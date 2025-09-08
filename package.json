@@ -1,0 +1,18 @@
+{
+  "name": "goa",
+  "version": "1.0.0",
+  "description": "goa academy work",
+
+  "license": "ISC",
+  "author": "nika mumladze",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1" ,
+    "dev": "npx @tailwindcss/cli -i ./Tailwind/input.css -o ./Tailwind/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}

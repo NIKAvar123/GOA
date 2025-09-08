@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 200px;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <section>
+    <h2>რიცხვის ზრდა / შემცირება</h2>
+    <button onclick="decrease()">-</button>
+    <span id="counter">0</span>
+    <button onclick="increase()">+</button>
+  </section>
+
+
+  <section>
+    <h2> შეიყვანე სიტყვა</h2>
+    <input type="text" id="wordInput" placeholder="Enter word">
+    <button onclick="checkWord()">შეამოწმე</button>
+    <p id="wordMessage"></p>
+  </section>
+
+
+  <section>
+    <h2>ელემენტის დამატება სიაში</h2>
+    <input type="text" id="listInput" placeholder="შეიყვანე ტექსტი">
+    <button onclick="addToList()">დამატება</button>
+    <ul id="myList"></ul>
+  </section>
+
+  <script>
+
+    let count = 0;
+    function increase() {
+      count++;
+      document.getElementById('counter').innerText = count;
+    }
+    function decrease() {
+      count--;
+      document.getElementById('counter').innerText = count;
+    }
+
+    // 2) Hello 
+    function checkWord() {
+      const input = document.getElementById('wordInput').value.trim().toLowerCase();
+      const message = document.getElementById('wordMessage');
+      if (input === "hello") {
+        message.textContent = "Welcome!";
+        message.style.color = "green";
+      } else {
+        message.textContent = "Try again!";
+        message.style.color = "red";
+      }
+    }
+
+
+
+
+  </script>
+
+</body>
+</html>

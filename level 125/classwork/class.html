@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <style>
+
+    .center-container {
+      display: flex;              /* Flexbox გაადვილებს ელემენტების განლაგებას */
+      justify-content: center;    /* ჰორიზონტალურად ცენტრში */
+      align-items: center;        /* ვერტიკალურად ცენტრში */
+      height: 100vh;              /* სრულ ეკრანზე გაწელვა */
+      background-color: #f0f0f0;
+    }
+
+
+    .horizontal-boxes {
+      display: flex;              /* შვილობილი ელემენტები განლაგდება ჰორიზონტალურად */
+      gap: 20px;                  /* შუალედი დივებს შორის */
+    }
+
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #4CAF50;
+      color: white;
+      display: flex;              /* ტექსტის ცენტრში მოსათავსებლად */
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center-container">
+    <div class="horizontal-boxes">
+      <div class="box">div1</div>
+      <div class="box">div2</div>
+      <div class="box">div3</div>
+      <div class="box">div4</div>
+    </div>
+  </div>
+
+</body>
+</html>
