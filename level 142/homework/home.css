@@ -1,0 +1,129 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+  background-color: hsl(225, 100%, 94%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 350px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+h2 {
+  font-weight: 900;
+  color: hsl(223, 47%, 23%);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: hsl(224, 23%, 55%);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.plan-box {
+  background: hsl(225, 100%, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.plan-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.plan-info .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.plan-info p {
+  color: hsl(224, 23%, 55%);
+  font-size: 14px;
+}
+
+.change {
+  font-weight: 700;
+  color: hsl(245, 75%, 52%);
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.change:hover {
+  color: hsl(245, 75%, 65%);
+}
+
+#proceed-btn {
+  background: hsl(245, 75%, 52%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 700;
+  box-shadow: 0 15px 25px rgba(56, 41, 224, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#proceed-btn:hover {
+  background: hsl(245, 75%, 60%);
+}
+
+.cancel {
+  background: none;
+  border: none;
+  color: hsl(224, 23%, 55%);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.cancel:hover {
+  color: hsl(223, 47%, 23%);
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 90%;
+  }
+}
