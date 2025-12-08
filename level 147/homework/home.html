@@ -1,0 +1,172 @@
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  </head>
+  <body>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    hr {
+      margin: 25px 0;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      border: 1px solid #999;
+      margin-top: 10px;
+    }
+  </style>
+
+
+<script>
+  import { useState } from "react";
+
+function Student() {
+  return <h2> Student Component</h2>;
+}
+
+function Teacher() {
+  return <h2> Teacher Component</h2>;
+}
+
+export default function App() {
+
+  const [showHello, setShowHello] = useState(false);
+
+
+  const [showPass, setShowPass] = useState(false);
+
+
+  const [welcome, setWelcome] = useState(false);
+
+
+  const [dark, setDark] = useState(false);
+
+ 
+  const [role, setRole] = useState("student");
+
+
+  const [age, setAge] = useState("");
+
+
+  const [loadingState, setLoadingState] = useState("idle"); 
+
+
+  return (
+    <div
+      style={{
+        padding: "20px",
+        background: dark ? "#222" : "#fff",
+        color: dark ? "#fff" : "#000",
+        minHeight: "100vh",
+        transition: "0.3s",
+      }}
+    >
+
+      <h3>Show / Hide Text</h3>
+      <button onClick={() => setShowHello(!showHello)}>Show</button>
+      {showHello && <p>Hello World</p>}
+
+      <hr />
+
+
+      <h3> Password Show / Hide</h3>
+      <input
+        type={showPass ? "text" : "password"}
+        placeholder="Password"
+      />
+      <button onClick={() => setShowPass(!showPass)}>
+        Show/Hide
+      </button>
+
+      <hr />
+
+ 
+      <h3>Welcome Toggle</h3>
+      <button onClick={() => setWelcome(!welcome)}>Toggle Welcome</button>
+      {welcome && <p>Welcome, user!</p>}
+
+      <hr />
+
+
+      <h3>Theme Switch</h3>
+      <button onClick={() => setDark(!dark)}>Toggle Theme</button>
+      <div
+        style={{
+          width: "150px",
+          height: "150px",
+          background: dark ? "#333" : "#eee",
+          marginTop: "10px",
+          border: "1px solid #999",
+        }}
+      ></div>
+
+      <hr />
+
+      
+      <h3>Select Student/Teacher</h3>
+      <select value={role} onChange={(e) => setRole(e.target.value)}>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+      </select>
+
+      {role === "student" && <Student />}
+      {role === "teacher" && <Teacher />}
+
+      <hr />
+
+
+      <h3> Age Check</h3>
+      <input
+        type="number"
+        placeholder="Enter age"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
+      />
+
+      {age !== "" && (
+        Number(age) >= 18 ? (
+          <p style={{ color: "green" }}>You are 18+</p>
+        ) : (
+          <p style={{ color: "red" }}>You are underage</p>
+        )
+      )}
+
+      <hr />
+
+
+      <h3> Load Data</h3>
+      <button
+        onClick={() => {
+          setLoadingState("loading");
+          setTimeout(() => {
+            setLoadingState("loaded");
+          }, 3000);
+        }}
+      >
+        Load data
+      </button>
+
+      {loadingState === "loading" && <p>Loading...</p>}
+      {loadingState === "loaded" && <p>Data loaded!</p>}
+    </div>
+  );
+}
+</script>
+  </body>
+  </html>
