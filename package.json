@@ -11,11 +11,13 @@
     "dev": "npx @tailwindcss/cli -i ./Tailwind/input.css -o ./Tailwind/output.css --watch"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@tailwindcss/cli": "^4.1.13",
     "chalk": "^5.6.2",
     "figlet": "^1.9.3",
     "inquirer": "^12.10.0",
     "moment": "^2.30.1",
+    "react-icons": "^5.5.0",
     "tailwindcss": "^4.1.13",
     "uuid": "^13.0.0"
   }
