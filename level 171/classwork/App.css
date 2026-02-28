@@ -1,0 +1,30 @@
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.colored {
+  background-color: skyblue;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+hr {
+  margin: 20px 0;
+}
