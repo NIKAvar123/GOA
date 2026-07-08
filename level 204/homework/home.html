@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Search</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  input, select, button {
+    padding: 8px;
+    margin: 5px;
+  }
+
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h2>პროდუქტების ძებნა</h2>
+
+<input type="text" id="searchInput" placeholder="პროდუქტის სახელი">
+
+<select id="categorySelect">
+  <option value="">ყველა კატეგორია</option>
+  <option value="Electronics">Electronics</option>
+  <option value="Clothes">Clothes</option>
+  <option value="Books">Books</option>
+</select>
+
+<button onclick="searchProducts()">ძებნა</button>
+
+<div id="products"></div>
+
+<script>
+async function searchProducts() {
+  const name = document.getElementById("searchInput").value;
+  const category = document.getElementById("categorySelect").value;
+
+  const response = await fetch(
+    `http://localhost:3000/products?name=${name}&category=${category}`
+  );
+
+  const products = await response.json();
+
+  const productsDiv = document.getElementById("products");
+  productsDiv.innerHTML = "";
+
+  products.forEach(product => {
+    productsDiv.innerHTML += `
+      <div class="product">
+        <h3>${product.name}</h3>
+        <p>Category: ${product.category}</p>
+      </div>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>
